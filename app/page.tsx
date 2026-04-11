@@ -2,10 +2,11 @@
 import {useCountries} from "@/hooks/useCountries";
 import CountryCard from "@/components/CountryCard";
 import {useFilters} from "@/hooks/useFilters";
+import FilterBar from "@/components/FilterBar";
 
 export default function Home() {
     const { countries, loading, error } = useCountries();
-    const { filtered, search, setSearch } = useFilters(countries);
+    const { filtered, search, setSearch, region, setRegion } = useFilters(countries);
 
     if (loading) return <p>Cargando...</p>
     if (error) return <p>Error!: {error}</p>
@@ -18,6 +19,11 @@ export default function Home() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           />
+          <FilterBar
+            region={region}
+            onRegionChange={setRegion}
+          >
+          </FilterBar>
           <div>
               {filtered.map((country) => (
                   <CountryCard key={country.name.common}
