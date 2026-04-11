@@ -12,7 +12,7 @@ export interface Country {
     region: string;
     population: number;
     currencies: Record<string, Currency>;
-    language: Record<string, string>;
+    languages: Record<string, string>;
     flags: {
         png: string;
         alt: string;

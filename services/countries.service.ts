@@ -6,7 +6,7 @@ export async function getAllCountries(): Promise<Country[]> {
     );
 
     if (!response.ok) {
-        throw new Error("Error getting countries from API");
+        throw new Error("Error al obtener datos de la API");
     }
 
     const data: Country[] = await response.json();
