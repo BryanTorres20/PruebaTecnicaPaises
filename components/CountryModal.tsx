@@ -14,8 +14,8 @@ export default function CountryModal({ country, onClose }: Props) {
             className="relative z-50"
         >
             <div className="fixed inset-0 bg-black/50"/>
-            <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="rounded-xl max-w-md p-6 w-full bg-white relative">
+            <div className="fixed inset-0 flex items-end sm:items-center justify-center p-0 sm:p-4">
+                <Dialog.Panel className="bg-white rounded-t-2xl sm:rounded-xl p-6 w-full sm:max-w-md relative max-h-[90vh] overflow-y-auto">
                     <button
                         onClick={onClose}
                         className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-2"
