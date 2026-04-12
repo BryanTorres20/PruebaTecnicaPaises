@@ -15,26 +15,34 @@ export default function CountryModal({ country, onClose }: Props) {
         >
             <div className="fixed inset-0 bg-black/50"/>
             <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="rounded-xl max-w-md bg-white">
+                <Dialog.Panel className="rounded-xl max-w-md p-6 w-full bg-white relative">
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-2"
+                    >
+                        X
+                    </button>
                     {country && (
                         <>
-                            <img src={country.flags.png} alt={country.flags.alt} className="w-20 mb-4" />
-
-                            <Dialog.Title className="text-xl font-bold mb-4">
+                            <img
+                                src={country.flags.png}
+                                alt={country.flags.alt}
+                                className="w-20 mb-4 rounded"
+                            />
+                            <Dialog.Title className="text-2xl font-bold text-gray-900 mb-4">
                                 {country.name.common}
                             </Dialog.Title>
-
-                            <p><strong>Población:</strong> {country.population.toLocaleString()}</p>
-
-                            <p><strong>Moneda(s):</strong>{" "}
+                            <p className="text-lg text-gray-700 mb-2">
+                                <strong>Población:</strong> {country.population.toLocaleString()}
+                            </p>
+                            <p className="text-lg text-gray-700 mb-2">
+                                <strong>Moneda(s):</strong>{" "}
                                 {Object.values(country.currencies).map(c => `${c.name} (${c.symbol})`).join(", ")}
                             </p>
-
-                            <p><strong>Idioma(s):</strong>{" "}
+                            <p className="text-lg text-gray-700">
+                                <strong>Idioma(s):</strong>{" "}
                                 {Object.values(country.languages).join(", ")}
                             </p>
-
-                            <button onClick={onClose} className="mt-4">Cerrar</button>
                         </>
                     )}
                 </Dialog.Panel>
