@@ -2,8 +2,8 @@ import {Country} from "@/ types/country.types";
 import {useMemo, useState} from "react";
 
 export function useFilters(countries: Country[]) {
-    const [search, setSearch] = useState("");
-    const [region, setRegion] = useState("");
+    const [search, setSearch] = useState<string>("");
+    const [region, setRegion] = useState<string>("");
 
     const filtered = useMemo(() => {
         return countries.filter((country) => {

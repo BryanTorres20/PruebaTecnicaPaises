@@ -10,6 +10,7 @@ export default function FilterBar({ region, onRegionChange}: Props) {
         <select
             value={region}
             onChange={(e) => onRegionChange(e.target.value)}
+            className="border border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-900 focus:outline-none focus:border-gray-400 bg-white"
         >
             <option value="">Todas las regiones</option>
             {REGIONS.map(r => (

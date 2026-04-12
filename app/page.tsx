@@ -2,10 +2,10 @@
 import {useCountries} from "@/hooks/useCountries";
 import CountryCard from "@/components/CountryCard";
 import {useFilters} from "@/hooks/useFilters";
-import FilterBar from "@/components/FilterBar";
 import {useState} from "react";
 import { Country } from "@/ types/country.types";
 import CountryModal from "@/components/CountryModal";
+import Header from "@/components/Header";
 
 export default function Home() {
     const { countries, loading, error } = useCountries();
@@ -17,27 +17,23 @@ export default function Home() {
 
     return (
       <main>
-          <input
-              type="text"
-              placeholder="Buscar pais..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+          <Header
+              search={search}
+              onSearch={setSearch}
+              region={region}
+              onRegionChanged={setRegion}
           />
-          <FilterBar
-            region={region}
-            onRegionChange={setRegion}
-          >
-          </FilterBar>
-          <div>
-              {filtered.map((country) => (
-                  <CountryCard
-                      key={country.name.common}
-                      country={country}
-                      onClick={() => setSelected(country)}
-                  />
-              ))}
+          <div className="p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {filtered.map((country) => (
+                      <CountryCard
+                          key={country.name.common}
+                          country={country}
+                          onClick={() => setSelected(country)}
+                      />
+                  ))}
+              </div>
           </div>
-
           {selected && (
               <CountryModal
                   country={selected}
