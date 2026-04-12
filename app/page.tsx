@@ -7,9 +7,10 @@ import { Country } from "@/ types/country.types";
 import CountryModal from "@/components/CountryModal";
 import Header from "@/components/Header";
 import CountryCardSkeleton from "@/components/CountryCardSkeleton";
+import ErrorMessage from "@/components/ErrorMessage";
 
 export default function Home() {
-    const { countries, loading, error } = useCountries();
+    const { countries, loading, error, refetch } = useCountries();
     const { filtered, search, setSearch, region, setRegion } = useFilters(countries);
     const [selected, setSelected] = useState<Country|null>(null);
 
@@ -22,9 +23,9 @@ export default function Home() {
               onRegionChanged={setRegion}
           />
           <div className="max-w-7xl mx-auto p-6">
-              {error && (
-                  <p className="text-red-500 text-center">{error}</p>
-              )}
+              {error ? (
+                  <ErrorMessage message={error} onRetry={refetch} />
+              ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {loading
                       ? Array.from({ length: 12 }).map((_, i) => (
@@ -38,6 +39,7 @@ export default function Home() {
                           />
                       ))}
               </div>
+              )}
           </div>
           {selected && (
               <CountryModal

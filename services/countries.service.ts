@@ -2,7 +2,9 @@ import { Country } from "@/ types/country.types";
 
 export async function getAllCountries(): Promise<Country[]> {
     const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/all?fields=${process.env.NEXT_PUBLIC_FIELDS}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/all?fields=${process.env.NEXT_PUBLIC_FIELDS}`, {
+            next: { revalidate: 3600 }
+        }
     );
 
     if (!response.ok) {
