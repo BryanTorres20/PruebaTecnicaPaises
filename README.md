@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Guia de Paises
 
-## Getting Started
+Aplicación web que consume la API pública de [RestCountries](https://restcountries.com/) para explorar información de países del mundo.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
+- Listado de todos los países con nombre, capital y región
+- Búsqueda de países por nombre en tiempo real
+- Filtro por región (África, América, Asia, Europa, Oceanía)
+- Modal con detalle del país: población, moneda(s) e idioma(s)
+- Bandera de cada país
+- Skeleton loading mientras cargan los datos
+- Manejo de errores con opción de reintentar
+- Diseño responsivo para móvil y desktop
+
+## 🛠Tecnologías
+
+- [Next.js 15](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Headless UI](https://headlessui.com/)
+- [RestCountries API](https://restcountries.com/)
+
+## Instalación y uso
+
+1. Clona el repositorio
+
+\`\`\`bash
+git clone https://github.com/BryanTorres20/PruebaTecnicaPaises.git
+\`\`\`
+
+2. Entra a la carpeta del proyecto
+
+\`\`\`bash
+cd PruebaTecnicaPaises/prueba_tecnica
+\`\`\`
+
+3. Instala las dependencias
+
+\`\`\`bash
+npm install
+\`\`\`
+
+4. Corre el proyecto
+
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Variables de entorno
 
-To learn more about Next.js, take a look at the following resources:
+Si deseas configurarlas crea un archivo `.env.local` en la carpeta `prueba_tecnica` con:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+\`\`\`env
+NEXT_PUBLIC_BASE_URL=https://restcountries.com/v3.1
+NEXT_PUBLIC_FIELDS=name,capital,region,population,currencies,languages,flags
+\`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Autor
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Bryan Torres**
+- GitHub: [@BryanTorres20](https://github.com/BryanTorres20)
