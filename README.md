@@ -56,10 +56,10 @@ https://prueba-tecnica-paises.vercel.app/
 
 Si deseas configurarlas crea un archivo `.env.local` en la carpeta `prueba_tecnica` con:
 
-\`\`\`env
+
 NEXT_PUBLIC_BASE_URL=https://restcountries.com/v3.1
 NEXT_PUBLIC_FIELDS=name,capital,region,population,currencies,languages,flags
-\`\`\`
+
 
 ## Autor
 
