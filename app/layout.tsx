@@ -8,7 +8,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Guia de Paises",
+  title: "Guía de Paises",
   description: "Explora información de países del mundo: población, monedas, idiomas y más.",
 };
 

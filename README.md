@@ -1,4 +1,4 @@
-# Guia de Paises
+# Guía de Paises
 
 Aplicación web que consume la API pública de [RestCountries](https://restcountries.com/) para explorar información de países del mundo.
 
@@ -13,7 +13,7 @@ Aplicación web que consume la API pública de [RestCountries](https://restcount
 - Manejo de errores con opción de reintentar
 - Diseño responsivo para móvil y desktop
 
-## 🛠Tecnologías
+## Tecnologías
 
 - [Next.js 15](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -50,7 +50,7 @@ npm run dev
 5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador
 
 ## Demo
-
+https://prueba-tecnica-paises.vercel.app/
 
 ## Variables de entorno
 
