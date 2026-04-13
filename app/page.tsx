@@ -8,6 +8,7 @@ import CountryModal from "@/components/CountryModal";
 import Header from "@/components/Header";
 import CountryCardSkeleton from "@/components/CountryCardSkeleton";
 import ErrorMessage from "@/components/ErrorMessage";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     const { countries, loading, error, refetch } = useCountries();
@@ -22,7 +23,7 @@ export default function Home() {
               region={region}
               onRegionChanged={setRegion}
           />
-          <div className="max-w-7xl mx-auto p-6">
+          <div className="max-w-7xl mx-auto p-6 flex'1 w'full">
               {error ? (
                   <ErrorMessage message={error} onRetry={refetch} />
               ) : (
@@ -47,6 +48,7 @@ export default function Home() {
                   onClose={() => setSelected(null)}
               />
           )}
+          <Footer/>
       </main>
     );
 }
